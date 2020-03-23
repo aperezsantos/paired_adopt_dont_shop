@@ -1,0 +1,10 @@
+<h1><%= @pet.name %></h1>
+<%= image_tag("#{@pet.image}", :size => "260x180") %><br>
+<p>Name: <%= @pet.name %></p>
+<p>Age: <%= @pet.age %></p>
+<p>Sex: <%= @pet.sex %></p>
+<p>Description: <%= @pet.description %></p>
+<p>Status: <%= @pet.adoption_status %></p>
+
+<%= link_to 'Delete Pet', "/pets/#{params[:id]}", method: :delete %><br>
+<%= link_to 'Update Pet', "/pets/#{params[:id]}/edit"%><br>
