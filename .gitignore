@@ -8,6 +8,8 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+/coverage.data
+/coverage/
 /log/*
 /tmp/*
 !/log/.keep
