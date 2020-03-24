@@ -12,3 +12,5 @@ pet2 = shelter1.pets.create!(name: "Melo", age: "3", sex: "Male", image: "https:
 
 pet3 = shelter2.pets.create!(name: "Lemmy", age: "3", sex: "Male", image: "https://i.redd.it/ypu5ydssuar21.jpg")
 pet4 = shelter2.pets.create!(name: "Hot Stuff", age: "5", sex: "Male", image: "https://pm1.narvii.com/7052/9058c2ef22124550d8f4a57d98f1cbaf0a2d8ac2r1-900-614v2_hq.jpg")
+
+review1 = shelter1.reviews.create!(title: "This place is great", rating: 5, content:"wow good lizards", image: "https://c7.alamy.com/comp/XAABRH/guy-with-thumbs-up-XAABRH.jpg")
