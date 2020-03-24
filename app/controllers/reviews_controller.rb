@@ -10,8 +10,12 @@ class ReviewsController < ApplicationController
 
   def update
     review = Review.find(params[:id])
-    review.update(review_params)
-    redirect_to "/shelters/#{review.shelter.id}"
+      if review.update(review_params)
+        redirect_to "/shelters/#{review.shelter.id}"
+      else
+        flash[:notice] = "ERROR: Required fields not filled. Try Again"
+        redirect_to "/reviews/#{review.id}/edit"
+      end
   end
 
   def create
