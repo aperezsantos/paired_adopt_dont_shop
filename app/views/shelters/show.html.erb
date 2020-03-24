@@ -13,7 +13,7 @@
 <p>Title: <%=review.title%></p>
 <p>Rating(Out of 5): <%= review.rating %></p>
 <p><%= review.content%></p>
-
+<%= link_to 'Edit Review', "/reviews/#{review.id}/edit" %>
 <% end %>
 
-<%= link_to 'New Review', "/shelters/#{@shelter.id}/reviews/new"%>
+<br><br><%= link_to 'New Review', "/shelters/#{@shelter.id}/reviews/new"%>

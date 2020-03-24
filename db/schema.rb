@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20200324210629) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "title"
-    t.integer "rating"
+    t.string "rating"
     t.string "content"
     t.string "image"
     t.bigint "shelter_id"
