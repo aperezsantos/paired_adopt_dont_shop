@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   patch '/shelters/:id', to: 'shelters#update'
   delete '/shelters/:id', to: 'shelters#destroy'
 
-  get "shelters/:id/pets/new", to: 'pets#new'
+  get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'
+  post '/shelters/:shelter_id/reviews', to: 'reviews#create'
+
+  get "/shelters/:id/pets/new", to: 'pets#new'
   get '/shelters/:id/pets', to: 'pets#show_index'
 
   get "/pets", to: "pets#index"
@@ -17,4 +20,6 @@ Rails.application.routes.draw do
   post '/shelters/:id/pets', to: 'pets#create'
   get '/pets/:id/edit', to: 'pets#edit'
   patch '/pets/:id', to: 'pets#update'
+
+
 end
