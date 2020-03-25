@@ -1,0 +1,29 @@
+
+<%= form_tag("/shelters/#{@shelter_id}/reviews", method: :post) do %><br>
+
+  <%= label_tag :title %><br>
+  <%= text_field_tag :title %><br>
+
+  <%= label_tag :rating %><br>
+  <%= text_field_tag :rating %><br>
+<!-- This is a cool drop down, will try and use later -->
+  <!-- <fieldset>
+               <label>Select Rating</label>
+               <select id = "Rating">
+                 <option value = "1">one</option>
+                 <option value = "2">two</option>
+                 <option value = "3">three</option>
+                 <option value = "4">four</option>
+                 <option value = "5">five</option>
+
+               </select>
+
+         </fieldset> -->
+  <%= label_tag :content %><br>
+  <%= text_field_tag :content %><br>
+
+  <%= label_tag :image %><br>
+  <%= text_field_tag :image %><br>
+
+  <%= submit_tag 'Submit' %><br>
+<% end %>
