@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
   if review.save
     redirect_to "/shelters/#{shelter.id}"
   else
-    flash[:notice] = "ERROR: Required fields not filled. Try Again"
+    flash.now[:notice] = "ERROR: Required fields not filled. Try Again"
     render :new
   end
 end
