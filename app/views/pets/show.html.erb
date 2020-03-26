@@ -5,6 +5,7 @@
 <p>Sex: <%= @pet.sex %></p>
 <p>Description: <%= @pet.description %></p>
 <p>Status: <%= @pet.adoption_status %></p>
+<%= link_to 'Add to Favorites', "/favorites/#{@pet.id}", method: :patch %><br><br>
 
 <%= link_to 'Delete Pet', "/pets/#{params[:id]}", method: :delete %><br>
 <%= link_to 'Update Pet', "/pets/#{params[:id]}/edit"%><br>
