@@ -8,9 +8,6 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/coverage.data
-/coverage/
-/coverage/*
 /log/*
 /tmp/*
 !/log/.keep
@@ -20,3 +17,6 @@
 /yarn-error.log
 
 .byebug_history
+
+/coverage.data
+/coverage/
