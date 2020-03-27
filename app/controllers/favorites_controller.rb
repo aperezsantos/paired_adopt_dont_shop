@@ -4,12 +4,17 @@ class FavoritesController < ApplicationController
   end
 
   def update
-
     pet = Pet.find(params[:pet_id])
     favorites.add_pet(pet.id)
     session[:favorites] = favorites.contents
     quantity = favorites.count_of(pet.id)
     flash[:notice] = "Pet has been added to Favorites"
     redirect_to "/pets/#{params[:pet_id]}"
+  end
+
+  def destroy
+    favorites.contents.delete(params[:id])
+    flash[:notice] = "Pet has been removed from Favorites"
+    redirect_to "/pets/#{params[:id]}"
   end
 end

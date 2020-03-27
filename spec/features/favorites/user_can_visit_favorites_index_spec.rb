@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Favorites Index', type: :feature do
+RSpec.describe '', type: :feature do
   it "user sees flash message indicating pet is added to favorites list" do
     shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: "80202")
     pet1 = shelter1.pets.create!(name: "Sam", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png")

@@ -24,9 +24,3 @@ RSpec.describe 'as a user I see a favorites indicator', type: :feature do
     expect(current_path).to eq("/favorites")
   end
 end
-
-  # User Story 11, Favorite Indicator links to Index Page
-  #
-  # As a visitor
-  # When I click on the favorite indicator in the nav bar
-  # I am taken to the favorites index page

@@ -12,8 +12,16 @@ class Favorite
   def add_pet(id)
     @contents[id.to_s] = count_of(id) + 1
   end
-  
+
   def count_of(id)
     @contents[id.to_s].to_i
+  end
+
+  def favorite_status(id)
+    if self.contents.keys.include?(id.to_s)
+      true
+    else
+      false
+    end
   end
 end
