@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-26T16:23:51-06:00">2020-03-26T16:23:51-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-26T18:28:11-06:00">2020-03-26T18:28:11-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.57
+         1.63
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>39</b> files in total.
-    <b>622</b> relevant lines. 
-    <span class="green"><b>622</b> lines covered</span> and
+    <b>639</b> relevant lines. 
+    <span class="green"><b>639</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,17 +57,17 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>17.0</td>
+        <td>19.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#44c5c0e8b34da982b3c15d4c720fcdc78a76172c" class="src_link" title="app/controllers/favorites_controller.rb">app/controllers/favorites_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
-        <td>8</td>
-        <td>8</td>
+        <td>15</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>3.0</td>
       </tr>
       
       <tr>
@@ -77,7 +77,7 @@
         <td>25</td>
         <td>25</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -127,7 +127,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>18.0</td>
+        <td>20.0</td>
       </tr>
       
       <tr>
@@ -283,9 +283,9 @@
       <tr>
         <td class="strong"><a href="#337eee15f4127ad3a54d5f52927e2a55bcfd4df6" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>22</td>
-        <td>22</td>
+        <td>30</td>
+        <td>23</td>
+        <td>23</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -293,9 +293,9 @@
       <tr>
         <td class="strong"><a href="#3c97411b2471410da102245e3beaecc376c47b49" class="src_link" title="spec/features/favorites/user_can_visit_favorites_index_spec.rb">spec/features/favorites/user_can_visit_favorites_index_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>37</td>
-        <td>16</td>
-        <td>16</td>
+        <td>48</td>
+        <td>31</td>
+        <td>31</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -500,8 +500,8 @@
           <code class="ruby">  def favorites</code>
         </li>
       
-        <li class="covered" data-hits="81" data-linenumber="6">
-          <span class="hits">81</span>
+        <li class="covered" data-hits="94" data-linenumber="6">
+          <span class="hits">94</span>
           
           <code class="ruby">    @favorites ||= Favorite.new(session[:favorites])</code>
         </li>
@@ -528,8 +528,8 @@
     <h3>app/controllers/favorites_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -546,7 +546,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update</code>
+          <code class="ruby">  def index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -555,79 +555,73 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    pet = Pet.find(params[:pet_id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">     # pet_id_str = pet.id.to_s</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">     # session[:favorites] ||= Hash.new(0)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">     # session[:favorites][pet_id_str] ||= 0</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">     # session[:favorites][pet_id_str] = session[:favorites][pet_id_str] + 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    favorites.add_pet(pet.id)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    session[:favorites] = favorites.contents</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    quantity = favorites.count_of(pet.id)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    flash[:notice] = &quot;Pet has been added to Favorites&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    redirect_to &quot;/pets/#{params[:pet_id]}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    pet = Pet.find(params[:pet_id])</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    favorites.add_pet(pet.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="10">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    session[:favorites] = favorites.contents</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="11">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    quantity = favorites.count_of(pet.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="12">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    flash[:notice] = &quot;Pet has been added to Favorites&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="13">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    redirect_to &quot;/pets/#{params[:pet_id]}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -718,8 +712,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="12">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="18" data-linenumber="12">
+          <span class="hits">18</span>
           
           <code class="ruby">    @pet = Pet.find(params[:id])</code>
         </li>
@@ -1557,8 +1551,8 @@
           <code class="ruby">  def initialize(initial_contents)</code>
         </li>
       
-        <li class="covered" data-hits="81" data-linenumber="5">
-          <span class="hits">81</span>
+        <li class="covered" data-hits="89" data-linenumber="5">
+          <span class="hits">89</span>
           
           <code class="ruby">    @contents = initial_contents || Hash.new(0)</code>
         </li>
@@ -1581,8 +1575,8 @@
           <code class="ruby">  def total_count</code>
         </li>
       
-        <li class="covered" data-hits="76" data-linenumber="9">
-          <span class="hits">76</span>
+        <li class="covered" data-hits="82" data-linenumber="9">
+          <span class="hits">82</span>
           
           <code class="ruby">    @contents.values.sum</code>
         </li>
@@ -1605,8 +1599,8 @@
           <code class="ruby">  def add_pet(id)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="13">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="13">
+          <span class="hits">9</span>
           
           <code class="ruby">    @contents[id.to_s] = count_of(id) + 1</code>
         </li>
@@ -1629,8 +1623,8 @@
           <code class="ruby">  def count_of(id)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="17">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="14" data-linenumber="17">
+          <span class="hits">14</span>
           
           <code class="ruby">    @contents[id.to_s].to_i</code>
         </li>
@@ -2968,8 +2962,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3145,7 +3139,13 @@
           <code class="ruby">  patch &#39;/favorites/:pet_id&#39;, to: &#39;favorites#update&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/favorites&#39;, to: &#39;favorites#index&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -3161,8 +3161,8 @@
     <h3>spec/features/favorites/user_can_visit_favorites_index_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>31</b> relevant lines. 
+      <span class="green"><b>31</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3299,7 +3299,7 @@
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">
@@ -3323,73 +3323,139 @@
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  it &quot;user sees favorite pets in favorites index page&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># User Story 9, Favorite Creation</code>
+          <code class="ruby">    shelter1 = Shelter.create!(name: &quot;Larry&#39;s Lizards&quot;, address: &quot;1331 17th Street&quot;, city: &#39;Denver&#39;, state: &#39;CO&#39;, zip: &quot;80202&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
           
+          <code class="ruby">    pet1 = shelter1.pets.create!(name: &quot;Sam&quot;, age: &quot;12&quot;, sex: &quot;Female&quot;, image: &quot;https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
           
-          <code class="ruby">#</code>
+          <code class="ruby">    pet2 = shelter1.pets.create!(name: &quot;Melo&quot;, age: &quot;3&quot;, sex: &quot;Male&quot;, image: &quot;https://i.pinimg.com/474x/8f/c4/68/8fc46860f9f52463e4e9db1ec32044f4--hady-reptile-room.jpg&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby"># As a visitor</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># When I visit a pet&#39;s show page</code>
+          <code class="ruby">    visit &quot;/pets/#{pet1.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># I see a button or link to favorite that pet</code>
+          <code class="ruby">    click_link &quot;Add to Favorites&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby"># When I click the button or link</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># I&#39;m taken back to that pet&#39;s show page</code>
+          <code class="ruby">    visit &quot;/pets/#{pet2.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># I see a flash message indicating that the pet has been added to my favorites list</code>
+          <code class="ruby">    click_link &quot;Add to Favorites&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby"># The favorite indicator in the nav bar has incremented by one</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &quot;/favorites&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(pet1.name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_css(&quot;img[src*=&#39;#{pet1.image}&#39;]&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(pet2.name)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_css(&quot;img[src*=&#39;#{pet2.image}&#39;]&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &quot;#{pet1.name}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(current_path).to eq(&quot;/pets/#{pet1.id}&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">end</code>
         </li>
       
     </ol>

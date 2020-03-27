@@ -1,0 +1,8 @@
+<h1>All Favorite Pets</h1>
+
+<% favorites.contents.keys.each do |pet_id| %>
+    <% pet = Pet.find(pet_id) %>
+    <%= link_to "#{pet.name}", "/pets/#{pet_id.to_i}"%><br>
+    <%= image_tag("#{pet.image}", :size => "260x180") %><br>
+
+<% end %>
