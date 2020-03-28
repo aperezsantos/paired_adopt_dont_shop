@@ -82,4 +82,10 @@ RSpec.describe 'as a user when I favorite a pet', type: :feature do
 
     expect(page).to have_content("Favorites: 0")
   end
+
+  it "when I have no favorites I see text that says I have no favorited pets" do
+    visit '/favorites'
+
+    expect(page).to have_content("You have no favorite pets")
+  end
 end
