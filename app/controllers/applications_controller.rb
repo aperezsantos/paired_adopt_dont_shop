@@ -8,6 +8,10 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
   end
 
+  def index
+    @pet = Pet.find(params[:id])
+  end
+
   def create
     application = Application.new(application_params)
     if application.save
