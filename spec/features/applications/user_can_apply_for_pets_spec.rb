@@ -95,7 +95,6 @@ RSpec.describe "As a User when I visit the favorites index page", type: :feature
       page.check
     end
 
-
     fill_in "Name", with: "Jimmy"
     fill_in "Address", with: "2050 Blake St"
     fill_in "City", with: "Denver"
@@ -114,13 +113,6 @@ RSpec.describe "As a User when I visit the favorites index page", type: :feature
       click_link("Sam")
     end
     expect(current_path).to eq("/pets/#{pet1.id}")
-    # User Story 18, List of Pets that have applications on them
-    #
-    # As a visitor
-    # After one or more applications have been created
-    # When I visit the favorites index page
-    # I see a section on the page that has a list of all of the pets that have at least one application on them
-    # Each pet's name is a link to their show page
   end
 
 end

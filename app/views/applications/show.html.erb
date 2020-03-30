@@ -1,0 +1,17 @@
+<h1><%= @application.name%>'s Application</h1></br>
+
+Name: <%= @application.name %><br>
+Address: <%= @application.address%><br>
+City: <%= @application.city%><br>
+State: <%= @application.state%><br>
+Zip: <%= @application.zip%><br>
+Phone Number: <%= @application.phone_number%><br>
+About Applicant: <%= @application.description%><br><br>
+Requested Pets:
+<%= form_tag "/applications/#{@application.id}", method: :patch  do %>
+  <% @application.pets.each do |pet| %>
+    <section id='application-<%=pet.id%>'>
+    <%= link_to "#{pet.name}", "/pets/#{pet.id}" %>
+    </section>
+  <%end%>
+<%end%>
