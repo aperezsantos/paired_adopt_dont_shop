@@ -28,7 +28,7 @@ RSpec.describe "When user visits the applications show page", type: :feature do
     expect(current_path).to eq("/pets/#{pet2.id}")
   end
 
-  it "applications can be view from the pets show page" do
+  it "applications can be viewed from the pets show page" do
 
     shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: "80202")
     pet1 = shelter1.pets.create!(name: "Sam", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png")

@@ -12,6 +12,13 @@ class ApplicationsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
+  def update
+    @pet = Pet.find(params[:pet_id])
+    @pet.adoption_status = "Pending"
+    @pet.save
+    redirect_to "/pets/#{params[:pet_id]}"
+  end
+
   def create
     application = Application.new(application_params)
     if application.save

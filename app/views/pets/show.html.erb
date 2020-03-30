@@ -20,3 +20,7 @@
   <% else %>
     <%= link_to 'View All Applications', "/pets/#{@pet.id}/applications"%>
 <% end %>
+
+<% if @pet.adoption_status == "Pending" %>
+    <h4>On hold for <%= link_to "#{@pet.applications.first.name}", "/applications/#{@pet.applications.first.id}"%> </h4>
+<% end %>
