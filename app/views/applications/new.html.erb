@@ -1,5 +1,4 @@
-<h1>Bring Home Your New Best Friend!!! </h1>
-
+<h1>Apply for your Favorite Pets</h1>
 
 <%= form_tag "/applications", method: :post  do %>
 
@@ -13,25 +12,25 @@
     <%end%><br><br>
 
     <%= label_tag :name %><br>
-    <%= text_field_tag :name%><br><br>
+    <%= text_field_tag :name%><br>
 
     <%= label_tag :address %><br>
-    <%= text_field_tag :address%><br><br>
+    <%= text_field_tag :address%><br>
 
     <%= label_tag :city %><br>
-    <%= text_field_tag :city%><br><br>
+    <%= text_field_tag :city%><br>
 
     <%= label_tag :state %><br>
-    <%= text_field_tag :state%><br><br>
+    <%= text_field_tag :state%><br>
 
     <%= label_tag :zip %><br>
-    <%= text_field_tag :zip%><br><br>
+    <%= text_field_tag :zip%><br>
 
     <%= label_tag(:phone_number, "Phone Number") %><br>
-    <%= text_field_tag :phone_number%><br><br>
+    <%= text_field_tag :phone_number%><br>
 
     <%= label_tag(:description, "Tell us about yourself") %><br>
-    <%= text_field_tag :description%><br><br>
+    <%= text_field_tag :description%><br>
 
     <%= submit_tag 'Submit Application' %>
 <% end %>
