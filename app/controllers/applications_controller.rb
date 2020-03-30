@@ -5,14 +5,18 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    application = Application.create(application_params)
+    application = Application.new(application_params)
+      if application.save
+          params[:adopted_pets].each do |pet|
+            favorites.contents.delete(pet)
+          end
 
-      params[:adopted_pets].each do |pet|
-        favorites.contents.delete(pet)
-      end
-
-    flash[:notice] = "Application Submitted Succesfully"
-    redirect_to '/favorites'
+        flash[:notice] = "Application Submitted Succesfully"
+        redirect_to '/favorites'
+    else
+        flash[:notice] = "Please fill out application fully before submiting"
+        redirect_to '/applications/new'
+    end
   end
 
   private

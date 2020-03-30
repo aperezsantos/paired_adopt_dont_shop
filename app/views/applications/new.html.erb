@@ -2,6 +2,7 @@
 
 
 <%= form_tag "/applications", method: :post  do %>
+
   <% @pets.each do |pet| %>
     <section id='pets-<%= pet.id %>'>
       <%= image_tag("#{pet.image}", :size => "260x180") %><br><br>
