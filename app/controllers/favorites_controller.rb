@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-
+    @applications = Application.all
   end
 
   def update

@@ -11,7 +11,22 @@
         <%= link_to "Remove from Favorites", "/favorites/remove_favorite/#{pet_id.to_i}", method: :delete %><br>
     </section>
   <% end %>
-<% end %>
+
 <br><br>
 <%= link_to "Adopt Pets", "/applications/new" %><br>
 <%= link_to "Remove All Favorites", "/favorites", method: :delete %><br>
+<%end%>
+<br>
+
+<%if @applications == nil %>
+  <h4>No applications pending</h4>
+<%else%>
+  <h4>Pets with Pending Applications:</h4>
+   <% @applications.each do |application|%>
+     <%application.pets.each do |pet|%>
+       <section id='application-<%=pet.id%>'>
+         <%= link_to pet.name, "/pets/#{pet.id}"%><br>
+       </section>
+     <%end%>
+   <%end%>
+<%end%>
