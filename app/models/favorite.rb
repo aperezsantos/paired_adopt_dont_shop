@@ -24,4 +24,12 @@ class Favorite
       false
     end
   end
+
+  def all_pets
+    pets = []
+    @contents.each do |pet_id, value|
+      pets << Pet.find(pet_id)
+    end
+    pets
+  end
 end
