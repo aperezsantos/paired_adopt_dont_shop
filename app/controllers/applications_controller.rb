@@ -6,11 +6,12 @@ class ApplicationsController < ApplicationController
 
   def create
     application = Application.new(application_params)
-      if application.save
+    if application.save
           params[:adopted_pets].each do |pet|
-            favorites.contents.delete(pet)
+              adopted_pet = Pet.find(pet)
+              adopted_pet.applications << application
+              favorites.contents.delete(pet)
           end
-
         flash[:notice] = "Application Submitted Succesfully"
         redirect_to '/favorites'
     else
