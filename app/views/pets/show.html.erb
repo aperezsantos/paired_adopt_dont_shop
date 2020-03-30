@@ -15,4 +15,8 @@
 <%= link_to 'Delete Pet', "/pets/#{params[:id]}", method: :delete %><br>
 <%= link_to 'Update Pet', "/pets/#{params[:id]}/edit"%><br>
 
-<%= link_to 'View All Applications', "/pets/#{@pet.id}/applications"%>
+<% if @pet.applications == [] %>
+    <h4>No Current Applications for this Pet</h4>
+  <% else %>
+    <%= link_to 'View All Applications', "/pets/#{@pet.id}/applications"%>
+<% end %>

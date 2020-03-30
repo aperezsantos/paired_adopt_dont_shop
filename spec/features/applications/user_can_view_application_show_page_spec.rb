@@ -53,16 +53,15 @@ RSpec.describe "When user visits the applications show page", type: :feature do
     click_link("Jimbo")
 
     expect(current_path).to eq("/applications/#{application1.id}")
+  end
 
+  it "when I visit the application index for a pet with no applications, I see a message saying such" do
+    shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: "80202")
+    pet1 = shelter1.pets.create!(name: "Sam", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png")
 
+    visit "/pets/#{pet1.id}"
 
-        #     User Story 20, Pet Applications Index Page
-        #
-        # As a visitor
-        # When I visit a pets show page
-        # I see a link to view all applications for this pet
-        # When I click that link
-        # I can see a list of all the names of applicants for this pet
-        # Each applicant's name is a link to their application show page
+    expect(page).to_not have_link("View All Applications")
+    expect(page).to have_content("No Current Applications for this Pet")
   end
 end
