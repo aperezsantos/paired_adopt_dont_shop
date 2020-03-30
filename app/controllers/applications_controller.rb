@@ -12,6 +12,13 @@ class ApplicationsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
+  def destroy
+    @pet = Pet.find(params[:pet_id])
+    @pet.adoption_status = "Available"
+    @pet.save
+    redirect_to "/applications/#{params[:application_id]}"
+  end
+
   def update
     if params[:requested_pets] == nil
       @pet = Pet.find(params[:pet_id])

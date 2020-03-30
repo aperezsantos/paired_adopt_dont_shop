@@ -15,6 +15,7 @@ About Applicant: <%= @application.description%><br><br>
     <%= link_to "#{pet.name}", "/pets/#{pet.id}" %><br>
     <%if pet.adoption_status != "Available"%>
      <p>Pending Adoption</p>
+     <%= link_to "Unapprove Application for #{pet.name}", "/applications/#{@application.id}/pets/#{pet.id}", method: :delete %><br>
     <%else%>
       <%= check_box_tag "requested_pets[]", pet.id %>
       <%= link_to "Approve Application for #{pet.name}", "/applications/#{@application.id}/pets/#{pet.id}", method: :patch %><br><br>
