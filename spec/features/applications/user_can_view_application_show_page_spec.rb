@@ -64,4 +64,5 @@ RSpec.describe "When user visits the applications show page", type: :feature do
     expect(page).to_not have_link("View All Applications")
     expect(page).to have_content("No Current Applications for this Pet")
   end
+
 end
