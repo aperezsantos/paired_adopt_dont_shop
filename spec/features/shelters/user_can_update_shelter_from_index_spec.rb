@@ -38,7 +38,6 @@ RSpec.describe "From the Shelters Index Page", type: :feature do
     expect(page).to_not have_content("#{shelter1.name}")
   end
 
-
   it "user cannot delete shelters that have approved applications for any of their pets" do
     shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: "80202")
     pet1 = shelter1.pets.create!(name: "Sam", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png", adoption_status: "Pending")
@@ -65,6 +64,20 @@ RSpec.describe "From the Shelters Index Page", type: :feature do
    expect(page).to_not have_content(shelter1.name)
    expect(page).to_not have_content(pet1.name)
    expect(page).to_not have_content(pet2.name)
+
+   expect(current_path).to eq("/shelters")
+ end
+
+ it "deleting a shelter also deletes that shelters reviews" do
+   shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: "80202")
+   review1 = shelter1.reviews.create!(title: "This place is great", rating: "5", content:"wow good lizards", image: "https://c7.alamy.com/comp/XAABRH/guy-with-thumbs-up-XAABRH.jpg")
+
+   visit "/shelters/#{shelter1.id}"
+
+   click_link ("Delete Shelter")
+
+   expect {shelter1.reload}.to raise_error ActiveRecord::RecordNotFound
+   expect {review1.reload}.to raise_error ActiveRecord::RecordNotFound
 
    expect(current_path).to eq("/shelters")
  end
