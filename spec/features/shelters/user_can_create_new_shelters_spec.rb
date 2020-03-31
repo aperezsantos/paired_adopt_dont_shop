@@ -17,4 +17,21 @@ RSpec.describe "A user can create new shelters", type: :feature do
     expect(current_path).to eq("/shelters")
     expect(page).to have_content("AAA")
   end
+
+  it "shelter will not be created if all fields are not filled out" do
+    visit "/shelters"
+
+    click_link "New Shelter"
+
+    fill_in "name", with: "AAA"
+    fill_in "city", with: "CCC"
+    fill_in "state", with: "DDD"
+    fill_in "zip", with: "EEE"
+
+    click_button ("Submit")
+
+    expect(current_path).to eq("/shelters/new")
+    expect(page).to have_content("Address can't be blank")
+
+  end
 end
