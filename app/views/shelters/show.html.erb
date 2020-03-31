@@ -8,6 +8,10 @@
 <%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit"%><br>
 <%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}/", method: :delete%><br><br><br>
 
+<h4>Advanced Statistics</h4>
+<p>Application Count for this Shelter: <%=@shelter.application_count%></p>
+<p>Pet Count for this Shelter: <%=@shelter.pets.length%></p>
+<p>Average Review Rating for this Shelter: <%=@shelter.average_review_rating.round(1)%></p><br>
 <% @shelter.reviews.each do |review| %>
 <%= image_tag("#{review.image}", :size => "260x180") %><br>
 <p>Title: <%=review.title%></p>
