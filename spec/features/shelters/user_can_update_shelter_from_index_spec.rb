@@ -82,4 +82,23 @@ RSpec.describe "From the Shelters Index Page", type: :feature do
    expect(current_path).to eq("/shelters")
  end
 
+#update
+ it "shelter will not be updated unless all fields are filled in" do
+    shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: '80202')
+
+    visit "/shelters"
+
+    click_link ("Edit Shelter")
+
+    fill_in "name", with: ""
+    fill_in "address", with: "BBB"
+    fill_in "city", with: "CCC"
+    fill_in "state", with: "DDD"
+    fill_in "zip", with: "EEE"
+
+    click_button ("Update Shelter")
+
+    expect(current_path).to eq("/shelters/#{shelter1.id}/edit")
+    expect(page).to have_content("Name can't be blank")
+  end
 end
