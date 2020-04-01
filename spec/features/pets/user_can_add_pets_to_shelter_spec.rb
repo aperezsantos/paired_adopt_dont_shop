@@ -32,4 +32,22 @@ RSpec.describe "As a user, when I visit a shelters pet index page", type: :featu
     expect(page).to have_content("Available")
 
   end
+
+  it "pet will not be created unless all fields are filled in" do
+     shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: '80202')
+     pet1 = shelter1.pets.create!(name: "Sam", description: "Slippery Snake", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png")
+
+     visit "/shelters/#{shelter1.id}/pets"
+
+     click_link "Create Pet"
+
+     fill_in "name", with: ""
+     fill_in "description", with: "BBB"
+     fill_in "age", with: "CCC"
+     fill_in "sex", with: "DDD"
+
+     click_button ("Submit")
+
+     expect(page).to have_content("Name can't be blank")
+   end
 end
