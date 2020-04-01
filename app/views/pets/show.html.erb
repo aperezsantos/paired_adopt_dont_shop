@@ -17,10 +17,10 @@
 
 <% if @pet.applications == [] %>
     <h4>No Current Applications for this Pet</h4>
-  <% else %>
+<%else%>
     <%= link_to 'View All Applications', "/pets/#{@pet.id}/applications"%>
 <% end %>
 
 <% if @pet.adoption_status == "Pending" %>
-    <h4>On hold for <%= link_to "#{@pet.applications.first.name}", "/applications/#{@pet.applications.first.id}"%> </h4>
+    <h4>On hold for <%=link_to "#{@pet.accepted_application.name}", "/applications/#{@pet.accepted_application.id}"%> </h4>
 <% end %>

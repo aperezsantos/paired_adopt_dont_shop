@@ -8,6 +8,7 @@ class CreateApplications < ActiveRecord::Migration[5.1]
       t.string :zip
       t.string :phone_number
       t.string :description
+      t.string :status, default: 'Pending'
       t.timestamps
     end
   end

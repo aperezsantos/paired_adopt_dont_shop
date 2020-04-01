@@ -20,18 +20,23 @@ class ApplicationsController < ApplicationController
   end
 
   def update
-    if params[:requested_pets] == nil
-      @pet = Pet.find(params[:pet_id])
-      @pet.adoption_status = "Pending"
-      @pet.save
-      redirect_to "/pets/#{params[:pet_id]}"
-    else
-      params[:requested_pets].each do |pet_id|
-        @pet = Pet.find(pet_id)
+    @application = Application.find(params[:application_id])
+      if params[:requested_pets] == nil
+        @pet = Pet.find(params[:pet_id])
         @pet.adoption_status = "Pending"
         @pet.save
+        @application.status = "Accepted"
+        @application.save
+        redirect_to "/pets/#{params[:pet_id]}"
+      else
+        params[:requested_pets].each do |pet_id|
+          @pet = Pet.find(pet_id)
+          @pet.adoption_status = "Pending"
+          @pet.save
+          @application.status = "Accepted"
+          @application.save
+        end
       end
-    end
   end
 
   def create
