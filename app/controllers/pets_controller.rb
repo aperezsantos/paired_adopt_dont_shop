@@ -18,14 +18,24 @@ class PetsController < ApplicationController
 
   def create
     shelter = Shelter.find(params[:id])
-    pet = shelter.pets.create!(pet_params)
-    redirect_to "/shelters/#{shelter.id}/pets"
+    pet = shelter.pets.new(pet_params)
+    if pet.save
+      redirect_to "/shelters/#{shelter.id}/pets"
+    else
+      flash[:error] = pet.errors.full_messages.to_sentence
+      redirect_to "/shelters/#{shelter.id}/pets.new"
+    end
   end
 
   def update
     pet = Pet.find(params[:id])
-    pet.update(pet_params)
-    redirect_to "/pets/#{params[:id]}"
+    if pet.update(pet_params)
+      redirect_to "/pets/#{params[:id]}"
+    else
+      flash[:error] = pet.errors.full_messages.to_sentence
+      redirect_to "/pets/#{params[:id]}/edit"
+    end
+
   end
 
   def edit
@@ -33,8 +43,17 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    Pet.destroy(params[:id])
-    redirect_to "/pets"
+    pet = Pet.find(params[:id])
+    if pet.adoption_status == "Pending"
+      flash[:notice] = "Error: cannot delete pet with pending adoption"
+      redirect_to "/pets/#{pet.id}"
+    else
+      Pet.destroy(params[:id])
+        if favorites.favorite_status(pet.id)
+          favorites.remove_pet(pet.id)
+        end
+      redirect_to "/pets"
+    end
   end
 
   private
