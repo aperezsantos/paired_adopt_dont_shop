@@ -9,7 +9,7 @@ class SheltersController < ApplicationController
   end
 
   def new
-    # @shelter_id = params[:id]
+  
   end
 
   def edit
