@@ -48,4 +48,22 @@ RSpec.describe "From the pets index page", type: :feature do
     expect(page).to_not have_content(pet1.sex)
 
   end
+
+  it "user can delete a pet and is removed from favorites" do
+    shelter1 = Shelter.create!(name: "Larry's Lizards", address: "1331 17th Street", city: 'Denver', state: 'CO', zip: "80202")
+    pet1 = shelter1.pets.create!(name: "Sam", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png")
+    pet2 = shelter1.pets.create!(name: "George", age: "12", sex: "Female", image: "https://66.media.tumblr.com/6a9b0ea4859319c0defd9681b3a78e8f/tumblr_n8o33kXRnG1qhaglio1_r1_1280.png")
+
+    visit "/pets/#{pet1.id}"
+    click_link "Add to Favorites"
+    click_link("Delete Pet")
+
+    visit "/pets/#{pet2.id}"
+    click_link "Add to Favorites"
+
+    visit "/favorites"
+
+    expect(page).to_not have_content(pet1.name)
+    expect(page).to have_content(pet2.name)
+  end
 end
