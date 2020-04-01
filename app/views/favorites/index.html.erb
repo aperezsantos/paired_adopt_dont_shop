@@ -10,11 +10,11 @@
         <%= image_tag("#{pet.image}", :size => "260x180") %><br>
         <%= link_to "Remove from Favorites", "/favorites/remove_favorite/#{pet_id.to_i}", method: :delete %><br>
     </section>
+    <br/>
   <% end %>
 
-<br><br>
 <%= link_to "Adopt Pets", "/applications/new" %><br>
-<%= link_to "Remove All Favorites", "/favorites", method: :delete %><br>
+<%= link_to "Remove All Favorites", "/favorites", method: :delete %>
 <%end%>
 <br>
 

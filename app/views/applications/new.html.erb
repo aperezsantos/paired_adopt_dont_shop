@@ -4,12 +4,13 @@
 
   <% @pets.each do |pet| %>
     <section id='pets-<%= pet.id %>'>
-      <%= image_tag("#{pet.image}", :size => "260x180") %><br><br>
-      <p>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p><br>
+      <%= image_tag("#{pet.image}", :size => "260x180") %><br>
+      <p>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
       <%= label_tag :adopt %>
       <%= check_box_tag "adopted_pets[]", pet.id %>
     </section>
-    <%end%><br><br>
+    <br/>
+    <%end%><br>
 
     <%= label_tag :name %><br>
     <%= text_field_tag :name%><br>

@@ -1,8 +1,8 @@
-<h1>Local Shelters</h1><br>
+<h1>Local Shelters</h1>
   <% @shelters.each do |shelter| %>
   <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%></h3>
   <%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit"%>
-  <br><%= link_to 'Delete Shelter', "/shelters/#{shelter.id}/", method: :delete%><br><br>
+  <br><%= link_to 'Delete Shelter', "/shelters/#{shelter.id}/", method: :delete%><br>
   <% end %>
 
-<br/><br/><%= link_to "New Shelter", "/shelters/new" %><br>
+<br/><%= link_to "New Shelter", "/shelters/new" %><br>
