@@ -8,7 +8,7 @@ Zip: <%= @application.zip%><br>
 Phone Number: <%= @application.phone_number%><br>
 About Applicant: <%= @application.description%><br><br>
 
-<%= form_tag "/applications/:id", method: :patch  do %>
+<%= form_tag "/applications/#{@application.id}", method: :patch  do %>
 <p>Requested Pets: </p>
   <% @application.pets.each do |pet| %>
     <section id='application-<%=pet.id%>'>
