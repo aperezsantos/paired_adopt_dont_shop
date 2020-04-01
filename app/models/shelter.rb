@@ -9,4 +9,26 @@ class Shelter < ApplicationRecord
       return true if (pet.adoption_status != "Available")
     end
   end
+
+  def application_count
+    applications = []
+    pets.each do |pet|
+      pet.applications.each do |application|
+        applications << application.id
+      end
+    end
+    return applications.uniq.length
+  end
+  
+  def average_review_rating
+    if self.reviews == []
+      return 0
+    else
+      average_rating = 0.0
+        self.reviews.each do |review|
+          average_rating += review.rating.to_i
+        end
+      return (average_rating/reviews.length)
+    end
+  end
 end
